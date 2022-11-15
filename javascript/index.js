@@ -20,6 +20,28 @@ function updateInterval() {
     madridTime.innerHTML = `${madridTimeZone.format("h:mm:ss [<small>]A[</small]>")} `;
 
   }
+
+  let buenosAiresElement = document.querySelector("#buenos-aires");
+  if (buenosAiresElement) {
+    let buenosAiresDate = buenosAiresElement.querySelector(".date")
+    let buenosAiresTime = buenosAiresElement.querySelector(".time")
+    let buenosAiresTimeZone = moment().tz("America/Buenos_Aires");
+
+    buenosAiresDate.innerHTML = buenosAiresTimeZone.format("MMMM Do YYYY");
+    buenosAiresTime.innerHTML = `${buenosAiresTimeZone.format("h:mm:ss [<small>]A[</small]>")} `;
+
+  }
+
+  let sydneyElement = document.querySelector("#sydney");
+  if (sydneyElement) {
+    let sydneyDate = sydneyElement.querySelector(".date")
+    let sydneyTime = sydneyElement.querySelector(".time")
+    let sydneyTimeZone = moment().tz("Australia/Sydney");
+
+    sydneyDate.innerHTML = sydneyTimeZone.format("MMMM Do YYYY");
+    sydneyTime.innerHTML = `${sydneyTimeZone.format("h:mm:ss [<small>]A[</small]>")} `;
+
+  }
   
 }
 
@@ -42,9 +64,9 @@ function updateCity(event) {
 </div> <a href="/"> Back to Main Page</a>`;
 }
 
-
 updateInterval();
 setInterval(updateInterval, 1000);
+
 
 let citiesElement = document.querySelector("#city");
 
